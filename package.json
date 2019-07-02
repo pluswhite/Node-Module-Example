@@ -1,0 +1,27 @@
+{
+  "name": "node-module-example-of-thsi",
+  "version": "0.0.2",
+  "description": "Example of node module",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EricThsi/Node-Module-Example.git"
+  },
+  "keywords": [
+    "Exmaple",
+    "Node",
+    "Module"
+  ],
+  "author": "EricThsi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EricThsi/Node-Module-Example/issues"
+  },
+  "homepage": "https://github.com/EricThsi/Node-Module-Example#readme",
+  "devDependencies": {
+    "eslint": "^6.0.1"
+  }
+}
