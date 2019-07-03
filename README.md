@@ -25,7 +25,20 @@ npm who am i
 npm publish
 ```
 
-Notice:
+## 5. Install and Use your module
+
+```bash
+# Anthor directory
+npm install your-package-name
+```
+
+```js
+const myModule = require('your-package-name');
+myModule();
+```
+
+## Notice:
 
 1. if it's a error message that `you do not have permission to publish "your module name", Are you logged in as the correct user?`, that's mean this module had exist.
 2. if you update module and want to republish, you must update your module version file in package.json.
+3. your registry config must be `http://registry.npmjs.org`.
