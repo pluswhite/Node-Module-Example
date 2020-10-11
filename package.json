@@ -1,14 +1,31 @@
 {
-  "name": "node-module-example-of-thsi",
+  "name": "@thsi/node-module-example",
   "version": "1.0.0",
   "description": "Example of node module",
-  "main": "index.js",
+  "main": "./lib/esm/index.js",
+  "exports": {
+    ".": {
+      "node": {
+        "module": "./lib/esm/index.js",
+        "require": "./lib/cjs/index.js",
+        "import": "./lib/esm/index.js"
+      },
+      "default": "./lib/esm/index.js"
+    }
+  },
+  "module": "./lib/esm/index.js",
+  "files": [
+    "lib/"
+  ],
   "scripts": {
     "build": "npm run clean && npm run compile",
     "clean": "rimraf lib",
-    "compile": "tsc",
+    "compile": "npm run compile:esm && npm run compile:commonjs",
+    "compile:esm": "tsc -p tsconfig.json",
+    "compile:commonjs": "tsc -p tsconfig-cjs.json",
     "test": "jest",
-    "commit": "npx git-cz"
+    "commit": "npx git-cz",
+    "prepublishOnly": "npm run build"
   },
   "husky": {
     "hooks": {
