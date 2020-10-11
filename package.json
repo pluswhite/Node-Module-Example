@@ -1,10 +1,41 @@
 {
-  "name": "node-module-example-of-thsi",
-  "version": "0.0.2",
+  "name": "@thsi/node-module-example",
+  "version": "1.0.0",
   "description": "Example of node module",
-  "main": "index.js",
+  "main": "./lib/esm/index.js",
+  "exports": {
+    ".": {
+      "node": {
+        "module": "./lib/esm/index.js",
+        "require": "./lib/cjs/index.js",
+        "import": "./lib/esm/index.js"
+      },
+      "default": "./lib/esm/index.js"
+    }
+  },
+  "module": "./lib/esm/index.js",
+  "files": [
+    "lib/"
+  ],
   "scripts": {
-    "test": "npm test test/**/*.js"
+    "build": "npm run clean && npm run compile",
+    "clean": "rimraf lib",
+    "compile": "npm run compile:esm && npm run compile:commonjs",
+    "compile:esm": "tsc -p tsconfig.json",
+    "compile:commonjs": "tsc -p tsconfig-cjs.json",
+    "test": "jest",
+    "commit": "npx git-cz",
+    "prepublishOnly": "npm run build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
   },
   "repository": {
     "type": "git",
@@ -13,7 +44,8 @@
   "keywords": [
     "Example",
     "Node",
-    "Module"
+    "Module",
+    "TypeScript"
   ],
   "author": "EricThsi",
   "license": "MIT",
@@ -21,7 +53,25 @@
     "url": "https://github.com/EricThsi/Node-Module-Example/issues"
   },
   "homepage": "https://github.com/EricThsi/Node-Module-Example#readme",
+  "dependencies": {
+    "typescript": "^4.0.3"
+  },
   "devDependencies": {
-    "eslint": "^6.0.1"
+    "@types/jest": "^26.0.14",
+    "@types/node": "^14.11.8",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^6.8.0",
+    "husky": "^4.3.0",
+    "jest": "^26.5.2",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.4.1",
+    "ts-node": "^9.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

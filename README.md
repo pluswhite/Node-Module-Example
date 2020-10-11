@@ -8,7 +8,7 @@ npm init
 
 ## 2. Define a entry file
 
-`entry` is a file that return object o method for the `require('module_name')` call.
+`entry` is a file that return object o method for the `require('your_module_name')` call.
 
 Can be config in `main` field of `package.json`
 
