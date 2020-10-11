@@ -16,7 +16,7 @@ Can be config in `main` field of `package.json`
 
 ```bash
 npm login
-npm who am i
+npm whoami
 ```
 
 ## 4. Publish your module

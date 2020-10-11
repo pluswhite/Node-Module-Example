@@ -1,5 +1,5 @@
 {
-  "name": "@thsi/node-module-example",
+  "name": "node-module-example-of-thsi",
   "version": "1.0.0",
   "description": "Example of node module",
   "main": "./lib/esm/index.js",
