@@ -1,3 +1,3 @@
-import { add, subtract } from './demo';
+import { add, subtract } from './utils/math';
 
 export { add, subtract };

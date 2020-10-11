@@ -4,6 +4,9 @@
   "description": "Example of node module",
   "main": "index.js",
   "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "rimraf lib",
+    "compile": "tsc",
     "test": "jest",
     "commit": "npx git-cz"
   },
@@ -45,6 +48,7 @@
     "jest": "^26.5.2",
     "lint-staged": "^10.4.0",
     "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
     "ts-jest": "^26.4.1",
     "ts-node": "^9.0.0"
   },
