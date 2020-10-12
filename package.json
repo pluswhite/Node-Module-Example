@@ -45,7 +45,10 @@
     "Example",
     "Node",
     "Module",
-    "TypeScript"
+    "TypeScript",
+    "Jest",
+    "ESLint",
+    "Prettier"
   ],
   "author": "EricThsi",
   "license": "MIT",
