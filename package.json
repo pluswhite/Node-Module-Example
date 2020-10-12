@@ -1,6 +1,6 @@
 {
   "name": "node-module-example-of-thsi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Example of node module",
   "main": "./lib/esm/index.js",
   "exports": {
